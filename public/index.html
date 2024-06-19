@@ -1,89 +1,100 @@
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Tailwind css tutorial</title>
-  </head>
-  <body class="text-gray-600 font-body">
-    <div>
-      <div>
-        <nav>
-          <div>
-            <h1 class="font-bold uppercase p-4 border-b border-gray-100">
-              <a href="/">Food Ninja</a>
-            </h1>
-          </div>
-          <ul>
-            <li class="text-gray-700 font-bold">
-              <a href="#">
-                <span>Home</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>About</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>Contact</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+
+</head>
+<body class="text-gray-600 font-body">
+
+<div class="grid md:grid-cols-3">
+  <div class="md:col-span-1 md:flex md:justify-end">
+    <nav class="text-right">
+      <div class="flex justify-between items-center">
+        <h1 class="font-bold uppercase p-4 border-b border-gray-100 hover:text-red-500">
+          <a href="/">Food Ninja</a>
+        </h1>
+        <div class="px-4 cursor-pointer md:hidden" id="burger">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+
+        </div>
       </div>
-
-      <main class="py-6 px-32">
-        <div class="flex justify-center md:justify-end">
-          <a href="#" class="text-primary">Log in</a>
-          <a href="#" class="text-primary ml-2">Sign up</a>
-        </div>
-
-        <header>
-          <h2 class="text-gray-700 text-6xl font-semibold">Recipes</h2>
-          <h3 class="text-2xl font-semibold">For Ninjas</h3>
-        </header>
-
-        <div>
-          <h4 class="font-bold pb-2 mt-12 border-b border-gray-200">
-            Latest Recipes
-          </h4>
-
-          <div class="mt-8">
-            <!-- cards go here -->
-            <div
-              class="rounded bg-white border-gray-200 shadow-md overflow-hidden"
-            >
-              <img
-                src="/img1.jpg"
-                alt="stew"
-                class="h-32 sm:h-48 w-80 object-cover"
-              />
-              <div class="m-4">
-                <span class="font-bold">5 Bean Chili Stew</span>
-                <span class="block text-gray-500 text-sm">Recipe by Mario</span>
-              </div>
-            </div>
-          </div>
-
-          <h4 class="font-bold pb-2 mt-12 border-b border-gray-200">
-            Most Popular
-          </h4>
-
-          <div class="mt-8">
-            <!-- cards go here -->
-          </div>
-        </div>
-
-        <div class="mt-12 flex justify-center">
-          <div class="bg-secondary-100 text-secondary-200">Load more</div>
-        </div>
-      </main>
+      <ul class="text-sm mt-6 hidden md:block" id="menu">
+        <li class="text-gray-700 font-bold py-1">
+          <a href="#" class="px-4 flex justify-end ">
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="text-gray-700 font-bold py-1">
+          <a href="#" class="px-4 flex justify-end ">
+            <span>About</span>
+          </a>
+        </li>
+        <li class="text-gray-700 font-bold py-1">
+          <a href="#" class="px-4 flex justify-end ">
+            <span>Contact</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <main class="px-16 py-6 bg-gray-200 md:col-span-2">
+    <div class="flex justify-center md:justify-end">
+      <a href="#" class="text-red-500 md:border-2 border-red-500 btn hover:border-white hover:text-white">Log in</a>
+      <a href="#" class="text-red-500 md:border-2 border-red-500 ml-2 btn hover:border-white hover:text-white">Sign up</a>
     </div>
-  </body>
+    <header>
+      <h2 class="text-gray-700 text-6xl font-semibold">Recipes</h2>
+      <h3 class="text-2xl font-semibold">For Ninjas</h3>
+    </header>
+    <div>
+      <h4 class="font-bold pb-2 mt-12 border-b border-gray-200">Latest Recipes</h4>
+      <div class="mt-8 grid lg:grid-cols-3 gap-10">
+        <!-- cards go here -->
+        <div class="card">
+          <img src="/img1.jpg" alt="stew" class="h-32 sm:h-48 w-full object-cover">
+          <div class="m-4">
+            <span class="font-bold">5 Bean Chili Stew</span>
+            <span class="block text-gray-500 text-sm">Recipe by Mario</span>
+          </div>
+          <div class="badge">
+            <span>25 mins</span>
+          </div>
+        </div>
+        <div class="card">
+          <img src="/noodles.jpg" alt="noodles" class="h-32 sm:h-48 w-full object-cover">
+          <div class="m-4">
+            <span class="font-bold">Veg Noodles</span>
+            <span class="block text-gray-500 text-sm">Recipe by Mario</span>
+          </div>
+          <div class="badge">
+            <span>25 mins</span>
+          </div>
+        </div>
+        <div class="card">
+          <img src="/curry.jpg" alt="curry" class="h-32 sm:h-48 w-full object-cover">
+          <div class="m-4">
+            <span class="font-bold">Tofu Curry</span>
+            <span class="block text-gray-500 text-sm">Recipe by Mario</span>
+          </div>
+          <div class="badge">
+            <span>25 mins</span>
+          </div>
+        </div>
+      </div>
+      <h4 class="font-bold pb-2 mt-12 border-b border-gray-200">Most Popular</h4>
+      <div class="mt-8">
+        <!-- cards go here -->
+      </div>
+    </div>
+    <div class="mt-12 flex justify-center">
+      <div class="bg-secondary-100 text-secondary-200 hover:text-red-500 btn">Load more</div>
+    </div>
+  </main>
+</div>
+<script src="index.js"></script>
+</body>
 </html>
